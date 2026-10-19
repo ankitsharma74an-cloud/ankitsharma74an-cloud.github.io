@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<title id="title">SciPy</title>
+<circle cx="64" cy="64" r="54" fill="#07599C"/>
+<path d="M90 34c-9-10-27-11-38-4-10 6-13 17-5 24 6 6 17 7 27 9 10 2 17 6 16 14-1 11-14 18-27 17-11-1-21-7-26-15" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M89 33 98 39 91 48" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

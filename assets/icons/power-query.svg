@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<title id="title">Microsoft Power Query concept icon</title>
+<path d="M15 24a8 8 0 0 1 8-8h56v88H23a8 8 0 0 1-8-8Z" fill="#16865D"/>
+<path d="M35 35h31v8H35zm0 17h31v8H35zm0 17h20v8H35z" fill="#fff" opacity=".95"/>
+<path d="M76 40h22l-8-8 7-7 21 21-21 21-7-7 8-8H76Z" fill="#36B37E"/>
+<path d="M80 74h25v28H80z" fill="#0B6645"/><path d="M85 80h15v4H85zm0 8h15v4H85zm0 8h10v4H85z" fill="#fff"/>
+</svg>

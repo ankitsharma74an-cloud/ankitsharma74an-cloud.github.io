@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<title id="title">Claude AI</title>
+<g transform="translate(64 64)" stroke="#D97757" stroke-width="7" stroke-linecap="round">
+<path d="M0-46V-20"/><path d="M0 20V46"/><path d="M-46 0H-20"/><path d="M20 0H46"/>
+<path d="M-32.5-32.5-14-14"/><path d="M14 14 32.5 32.5"/><path d="M32.5-32.5 14-14"/><path d="M-14 14-32.5 32.5"/>
+<path d="M-18-42-8-19"/><path d="M8 19 18 42"/><path d="M42-18 19-8"/><path d="M-19 8-42 18"/>
+</g>
+</svg>

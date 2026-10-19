@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<title id="title">XLBooster wordmark approximation</title>
+<g transform="translate(4 18)">
+<path d="M5 12h14l11 14 11-14h14L37 35l18 23H40L30 43 20 58H6l17-23Z" fill="#107C41"/>
+<path d="M57 12h11v35h22v11H57Z" fill="#21A366"/>
+<path d="M94 18 103 9l9 9-9 9Z" fill="#FFB900"/><path d="M95 37l9-9 9 9-9 9Z" fill="#F7630C"/>
+</g>
+<text x="64" y="104" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" letter-spacing="-.5" fill="#254A36">XLBooster</text>
+</svg>
