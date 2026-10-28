@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<title id="title">DAX — generic typographic badge, not an official standalone logo</title>
+<path d="M64 9 113 37v54L64 119 15 91V37Z" fill="#F2B705"/>
+<path d="M64 19 103 41v44L64 107 25 85V41Z" fill="#fff" opacity=".95"/>
+<text x="64" y="72" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="800" letter-spacing="-1.5" fill="#C57A00">DAX</text>
+<path d="M42 84h44" stroke="#F2B705" stroke-width="4" stroke-linecap="round"/>
+</svg>

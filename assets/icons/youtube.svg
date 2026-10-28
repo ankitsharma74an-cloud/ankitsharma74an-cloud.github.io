@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">YouTube</title>
+  <desc id="desc">YouTube red play-button icon with a white play triangle.</desc>
+  <path fill="#FF0033" d="M462 150c-5-21-22-38-43-44C381 96 256 96 256 96s-125 0-163 10c-21 6-38 23-43 44-10 38-10 106-10 106s0 68 10 106c5 21 22 38 43 44 38 10 163 10 163 10s125 0 163-10c21-6 38-23 43-44 10-38 10-106 10-106s0-68-10-106z"/>
+  <path fill="#FFFFFF" d="M218 181v150l126-75z"/>
+</svg>

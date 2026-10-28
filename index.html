@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ankit Sharma | Data Analyst Portfolio</title>
+<meta name="description" content="Ankit Sharma - Data Analyst portfolio: SQL, Python, Excel, Power BI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07101f;
+  --bg-2:#0c1830;
+  --panel:#0f1d36;
+  --panel-2:#13254a;
+  --line:#1f3560;
+  --accent:#f97316;
+  --accent-2:#fb923c;
+  --cyan:#38bdf8;
+  --text:#e8eef9;
+  --muted:#9fb0cc;
+  --radius:22px;
+  --shadow:0 18px 45px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  background:radial-gradient(1200px 600px at 10% -10%,#16315f 0%,transparent 60%),
+             radial-gradient(900px 500px at 110% 10%,#1c2a55 0%,transparent 60%),
+             var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+section{padding:90px 6% 40px;scroll-margin-top:100px}
+
+/* ---------- HEADER ---------- */
+header.nav{
+  position:sticky;top:0;z-index:100;
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;
+  padding:14px 4%;
+  background:rgba(7,16,31,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(56,189,248,.12);
+}
+.brand{font-weight:800;letter-spacing:.5px;font-size:1.1rem}
+.brand span{color:var(--accent)}
+.nav-center{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.nav-center button{
+  padding:9px 16px;border-radius:999px;font-size:.9rem;font-weight:600;color:var(--muted);
+  border:1px solid transparent;transition:all .3s ease;
+}
+.nav-center button:hover{color:#fff;border-color:var(--cyan);box-shadow:0 0 18px rgba(56,189,248,.25);transform:translateY(-2px)}
+.nav-center button.is-active{color:#fff;background:linear-gradient(135deg,var(--accent),#ea580c);box-shadow:0 8px 22px rgba(249,115,22,.35)}
+.nav-right{display:flex;gap:10px;justify-content:flex-end}
+.pill{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:999px;
+  font-weight:700;font-size:.9rem;border:1px solid var(--line);background:var(--panel);
+  transition:all .3s ease;
+}
+.pill:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 10px 24px rgba(249,115,22,.25)}
+.pill:active{transform:translateY(0) scale(.98)}
+.pill.primary{background:linear-gradient(135deg,var(--accent),#ea580c);border-color:transparent}
+.pill.primary:hover{box-shadow:0 10px 26px rgba(249,115,22,.45)}
+
+/* ---------- HERO ---------- */
+#hero{padding-top:50px}
+.badge{
+  display:inline-block;padding:8px 18px;border-radius:999px;
+  background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.55);color:var(--accent-2);
+  font-size:.85rem;font-weight:700;letter-spacing:.3px;margin-bottom:22px;
+  box-shadow:0 0 22px rgba(249,115,22,.18);
+}
+.intro-stage{
+  position:relative;width:100%;max-width:1100px;margin:0 auto;aspect-ratio:16/9;
+  border-radius:28px;overflow:hidden;border:1px solid var(--line);
+  background:#050b16;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(56,189,248,.08);
+}
+.intro-stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .9s ease}
+.intro-stage.done video{opacity:0}
+.intro-text{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;padding:30px;opacity:0;pointer-events:none;transition:opacity .6s ease;
+  background:radial-gradient(circle at 50% 40%,#132a52 0%,#07101f 75%);
+}
+.intro-text.show{opacity:1;pointer-events:auto}
+.intro-text h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;line-height:1.1}
+.intro-text h2{font-size:clamp(1.3rem,3vw,2rem);color:var(--accent);margin-top:8px;font-weight:700}
+.intro-text .wel{margin-top:18px;font-size:clamp(1rem,2vw,1.2rem);color:var(--cyan);font-weight:600}
+.intro-text .tag{margin-top:10px;max-width:640px;color:var(--muted);font-size:clamp(.95rem,1.6vw,1.05rem)}
+.intro-text.show h1{animation:rise .9s .1s both}
+.intro-text.show h2{animation:rise .9s .45s both}
+.intro-text.show .wel{animation:rise .9s .8s both}
+.intro-text.show .tag{animation:rise .9s 1.15s both}
+.badge{animation:blink 1.2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 22px rgba(249,115,22,.18)}50%{opacity:.25;box-shadow:0 0 4px rgba(249,115,22,0)}}
+@keyframes rise{from{opacity:0;transform:translateY(22px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
+.intro-controls{display:flex;justify-content:flex-end;gap:12px;max-width:1100px;margin:18px auto 0;flex-wrap:wrap}
+.intro-controls button{
+  padding:10px 20px;border-radius:999px;background:var(--panel);border:1px solid var(--line);
+  font-weight:600;font-size:.9rem;transition:all .3s ease;
+}
+.intro-controls button:hover{border-color:var(--cyan);color:#fff;transform:translateY(-2px);box-shadow:0 10px 22px rgba(56,189,248,.22)}
+.intro-controls button:active{transform:scale(.97)}
+
+/* ---------- SECTION HEADINGS ---------- */
+.section-head{text-align:center;margin-bottom:46px}
+.section-head h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:800}
+.section-head h2::after{content:"";display:block;width:70px;height:4px;margin:14px auto 0;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--cyan))}
+.section-head p{color:var(--muted);margin-top:12px;font-size:1.05rem}
+
+.card{
+  background:linear-gradient(160deg,var(--panel-2),var(--panel));
+  border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
+  transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;
+}
+.card:hover{transform:translateY(-4px);border-color:rgba(56,189,248,.45);box-shadow:0 24px 50px rgba(0,0,0,.45),0 0 30px rgba(56,189,248,.12)}
+
+/* ---------- ABOUT ---------- */
+.about-grid{display:grid;grid-template-columns:minmax(340px,1fr) 1.2fr;gap:40px;align-items:stretch;max-width:1150px;margin:0 auto}
+.profile{
+  position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+  box-shadow:var(--shadow);min-height:580px;
+}
+.profile img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .6s ease}
+.profile:hover img{transform:scale(1.04)}
+.profile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(7,16,31,.55),transparent 45%);pointer-events:none}
+.about-box{padding:38px 40px}
+.about-box h3{font-size:1.9rem;font-weight:800;margin-bottom:14px}
+.about-box h3 span{color:var(--accent)}
+.about-box p{color:#c9d6ea;font-size:1.02rem}
+.bring{margin-top:26px;padding-top:22px;border-top:1px dashed var(--line)}
+.bring h4{color:var(--cyan);font-size:1.05rem;letter-spacing:.4px;margin-bottom:12px}
+.bring ul{list-style:none;display:grid;gap:10px}
+.bring li{
+  padding:10px 16px 10px 44px;border-radius:14px;background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.12);
+  position:relative;font-weight:500;transition:all .3s ease;
+}
+.bring li::before{content:"";position:absolute;left:18px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+.bring li:hover{transform:translateX(6px);background:rgba(249,115,22,.08);border-color:rgba(249,115,22,.4)}
+
+/* ---------- JOURNEY ---------- */
+.sub{text-align:center;color:var(--muted);font-size:1.05rem;margin-top:-30px;margin-bottom:40px}
+.journey-wrap{max-width:900px;margin:0 auto}
+.journey-card{padding:40px 44px}
+.journey-card .hl{
+  display:inline-block;padding:8px 18px;border-radius:999px;background:var(--accent);color:#fff;
+  font-weight:700;font-size:.9rem;margin-bottom:28px;box-shadow:0 8px 20px rgba(249,115,22,.35);
+}
+.timeline{position:relative;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--cyan),var(--accent))}
+.tl-item{position:relative;padding-bottom:30px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{
+  content:"";position:absolute;left:-34px;top:6px;width:18px;height:18px;border-radius:50%;
+  background:var(--bg);border:3px solid var(--cyan);box-shadow:0 0 0 5px rgba(56,189,248,.12);transition:all .3s ease;
+}
+.tl-item:hover::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 6px rgba(249,115,22,.25),0 0 16px var(--accent);transform:scale(1.1)}
+.tl-date{display:inline-block;color:var(--accent-2);font-weight:700;font-size:.9rem;letter-spacing:.3px}
+.tl-item h4{font-size:1.12rem;margin-top:4px}
+.tl-item p{color:var(--muted);font-size:.97rem}
+.journey-actions{display:flex;justify-content:center;gap:16px;margin-top:30px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:13px 28px;border-radius:999px;font-weight:700;
+  border:1px solid var(--line);background:var(--panel);transition:all .3s ease;
+}
+.btn:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 12px 26px rgba(249,115,22,.25)}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:linear-gradient(135deg,var(--accent),#ea580c);border-color:transparent}
+
+/* ---------- SKILLS ---------- */
+.filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:38px}
+.filter{
+  padding:11px 22px;border-radius:16px;background:var(--panel);border:1px solid var(--line);
+  font-weight:600;font-size:.93rem;color:var(--muted);transition:all .3s ease;
+}
+.filter:hover{color:#fff;border-color:var(--cyan);transform:translateY(-2px)}
+.filter.is-active{color:#fff;background:linear-gradient(135deg,var(--accent),#ea580c);border-color:transparent;box-shadow:0 10px 24px rgba(249,115,22,.35)}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:20px;max-width:1100px;margin:0 auto}
+.skill{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  padding:26px 14px;border-radius:var(--radius);text-align:center;cursor:default;
+  animation:pop .45s ease both;
+}
+.skill.hidden{display:none}
+.skill .ico{
+  width:64px;height:64px;display:flex;align-items:center;justify-content:center;
+  border-radius:18px;background:rgba(255,255,255,.04);border:1px solid var(--line);transition:all .35s ease;
+}
+.skill .ico img{width:40px;height:40px;object-fit:contain;transition:transform .35s ease}
+.skill .fallback{display:none;font-weight:800;font-size:1.1rem;color:var(--cyan)}
+.skill span.name{font-weight:600;font-size:.95rem}
+.skill:hover{transform:translateY(-6px)}
+.skill:hover .ico{border-color:var(--accent);background:rgba(249,115,22,.1);box-shadow:0 0 24px rgba(249,115,22,.3)}
+.skill:hover .ico img{transform:scale(1.12) rotate(-4deg)}
+@keyframes pop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+
+/* ---------- PROJECTS / CERTIFICATES ---------- */
+.two-up{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1100px;margin:0 auto}
+.media-card{overflow:hidden;padding:14px;display:flex;flex-direction:column}
+.media-frame{border-radius:16px;overflow:hidden;background:#050b16;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}
+.media-frame img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.media-card:hover .media-frame img{transform:scale(1.05)}
+.media-card.cert .media-frame img{object-fit:contain;background:#fff}
+.media-info{padding:18px 8px 8px}
+.media-info h3{font-size:1.1rem;line-height:1.35}
+.media-info h3 a{background:linear-gradient(var(--cyan),var(--cyan)) no-repeat 0 100%/0 2px;transition:background-size .4s ease,color .3s ease}
+.media-info h3 a:hover{color:var(--accent-2);background-size:100% 2px}
+.media-info p{color:var(--muted);font-size:.95rem;margin-top:8px}
+.counter-row{display:flex;flex-direction:column;align-items:center;gap:22px;margin-top:40px}
+.counter{font-size:2.2rem;font-weight:800;color:var(--accent)}
+.counter-label{color:var(--muted);font-size:.95rem;margin-top:-18px;text-align:center}
+.social-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.count-box{text-align:center}
+.project-links{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px;margin:36px auto 0}
+.project-links .social-btn{justify-content:center;width:100%;padding:14px 18px}
+@media (max-width:560px){.project-links{grid-template-columns:1fr}}
+.count-box .counter-label{margin-top:2px}
+
+/* ---------- CONNECT ---------- */
+.connect-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;max-width:1150px;margin:0 auto;align-items:start}
+.connect-title{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(3rem,7vw,5rem);line-height:1;margin-bottom:26px}
+.connect-lead{font-size:clamp(1.1rem,2vw,1.4rem);color:#c3d0e6;line-height:1.7;max-width:560px}
+.drop-card{
+  margin-top:34px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:22px 26px;border-radius:20px;background:var(--panel);border:1px solid var(--line);max-width:560px;transition:all .3s ease;
+}
+.drop-card:hover{border-color:var(--accent);box-shadow:0 12px 30px rgba(249,115,22,.15);transform:translateY(-3px)}
+.drop-card small{display:block;color:var(--accent);font-weight:800;letter-spacing:1.4px;font-size:.75rem}
+.drop-card strong{font-size:1.15rem;word-break:break-all}
+.copy-btn{width:46px;height:46px;border-radius:14px;background:var(--panel-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s ease}
+.copy-btn:hover{border-color:var(--cyan);background:rgba(56,189,248,.12);transform:scale(1.08)}
+.copy-btn svg{width:20px;height:20px;stroke:#fff}
+.copy-btn.copied{border-color:var(--accent);color:var(--accent)}
+.form-card{padding:38px 36px}
+.form-card h3{font-size:1.6rem;font-weight:800}
+.form-card .eyebrow{color:var(--muted);font-size:.78rem;font-weight:700;letter-spacing:1.4px;margin:22px 0 12px}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{padding:10px 18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-weight:600;font-size:.92rem;color:var(--muted);transition:all .3s ease}
+.chip:hover{color:#fff;border-color:var(--cyan);transform:translateY(-2px)}
+.chip.is-active{color:var(--accent-2);border-color:var(--accent);background:rgba(249,115,22,.12);box-shadow:0 0 18px rgba(249,115,22,.25)}
+.field{
+  width:100%;margin-top:14px;padding:16px 18px;border-radius:14px;border:1px solid var(--line);
+  background:rgba(255,255,255,.03);color:var(--text);font:inherit;outline:none;transition:all .3s ease;
+}
+.field::placeholder{color:#7488a8}
+.field:hover{border-color:#2c4a80}
+.field:focus{border-color:var(--cyan);box-shadow:0 0 0 4px rgba(56,189,248,.15);background:rgba(56,189,248,.04)}
+textarea.field{min-height:140px;resize:vertical}
+.send-btn{
+  width:100%;margin-top:22px;padding:16px;border-radius:14px;font-weight:800;font-size:1rem;color:#fff;
+  background:linear-gradient(135deg,var(--accent),#ea580c);transition:all .3s ease;
+}
+.send-btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(249,115,22,.4)}
+.send-btn:active{transform:scale(.98)}
+.find-wrap{max-width:1150px;margin:70px auto 0;text-align:left}
+.find-wrap .eyebrow{color:var(--muted);font-size:.8rem;font-weight:700;letter-spacing:1.6px;margin-bottom:14px}
+.social-btn{
+  display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;
+  background:var(--panel);border:1px solid var(--line);font-weight:600;transition:all .3s ease;
+}
+.social-btn img{width:20px;height:20px;object-fit:contain;transition:transform .3s ease}
+.social-btn .fallback{display:none;font-weight:800;color:var(--cyan);font-size:.9rem}
+.social-btn:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 14px 28px rgba(249,115,22,.22)}
+.social-btn:hover img{transform:scale(1.15)}
+
+footer{text-align:center;color:var(--muted);font-size:.9rem;padding:40px 6% 30px;border-top:1px solid var(--line);margin-top:60px}
+
+/* icon fallbacks when a file is missing */
+img[data-icon].broken{display:none}
+.fallback-on{display:block !important}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1000px){
+  header.nav{grid-template-columns:1fr;justify-items:center;gap:12px}
+  .nav-right{justify-content:center}
+  .about-grid,.connect-grid,.two-up{grid-template-columns:1fr}
+  .profile{min-height:460px}
+}
+@media (max-width:560px){
+  section{padding:70px 5% 30px}
+  .about-box,.journey-card,.form-card{padding:26px 22px}
+  .timeline{padding-left:26px}
+  .tl-item::before{left:-26px}
+  .timeline::before{left:6px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tags span{padding:5px 12px;border-radius:999px;font-size:.8rem;font-weight:600;color:var(--cyan);border:1px solid rgba(56,189,248,.35);background:rgba(56,189,248,.08)}
+.proj-links{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.proj-links .social-btn{justify-content:center;width:100%;padding:12px 10px;font-size:.9rem}
+@media (max-width:560px){.proj-links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="nav">
+  <div class="brand">ANKIT<span>.</span>SHARMA</div>
+  <nav class="nav-center" id="navCenter">
+    <button data-target="about">About</button>
+    <button data-target="journey">Journey</button>
+    <button data-target="skills">My Skills</button>
+    <button data-target="projects">Projects</button>
+    <button data-target="certificates">Certificates</button>
+  </nav>
+  <div class="nav-right">
+    <a class="pill" href="#connect">Connect</a>
+    <a class="pill primary" href="assets/Ankit_Sharma_Resume.pdf" download>Resume</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="hero" style="padding-top:50px">
+  <div style="max-width:1100px;margin:0 auto">
+    <span class="badge">Available to new Opportunity</span>
+    <div class="intro-stage" id="introStage">
+      <video id="introVideo" src="assets/media/intro.mp4" playsinline preload="auto" autoplay></video>
+      <div class="intro-text" id="introText">
+        <h1>Hi, I'm Ankit Sharma</h1>
+        <h2>A Data Analyst</h2>
+        <p class="wel">Welcome to my portfolio</p>
+        <p class="tag">Scaling toward cloud data warehousing for enterprise-level data architectures.</p>
+      </div>
+    </div>
+    <div class="intro-controls">
+      <button id="repeatBtn" type="button">Repeat intro</button>
+      <button id="soundBtn" type="button">Off Sound</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="section-head"><h2>About</h2><p>Who I am and what I bring to the table</p></div>
+  <div class="about-grid">
+    <div class="profile"><img src="assets/media/Profile.png" alt="Ankit Sharma, Data Analyst"></div>
+    <div class="card about-box">
+      <h3>About <span>Me</span></h3>
+      <p>I turn complex datasets into actionable business insights using SQL, Python, Excel, and Power BI. Experienced in credit-risk assessment, data validation, ETL, customer analytics, and interactive dashboards, focused on accuracy, analytical thinking, and evidence-based decisions. Eager to build scalable cloud warehouses.</p>
+      <div class="bring">
+        <h4>What I Bring</h4>
+        <ul>
+          <li>SQL Querying &amp; Data Analysis</li>
+          <li>Data Cleaning &amp; Transformation</li>
+          <li>Python &amp; Automation</li>
+          <li>Power BI Dashboard Development</li>
+          <li>Strong Communication Skills</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNEY ============ -->
+<section id="journey">
+  <div class="section-head"><h2>Journey</h2></div>
+  <p class="sub">Learning, building, and growing</p>
+  <div class="journey-wrap">
+    <div class="card journey-card">
+      <span class="hl">Journey Highlights</span>
+      <div class="timeline">
+        <div class="tl-item">
+          <span class="tl-date">Jun 2019 - May 2022</span>
+          <h4>Prestige Institute of Management &amp; Research, Gwalior</h4>
+          <p>Bachelor of Commerce, Computer Application</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">Apr 2023 - May 2024</span>
+          <h4>Assistant Executive Customer Service, Operations</h4>
+          <p>iENERGIZER IT Services PVT.LTD.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">Sep 2024 – Sep 2026</span>
+          <h4>Galgotias University, Greater Noida</h4>
+          <p>Master of Business Administration, Business Analytics &amp; Operations</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">Aug 2026 - Sep 2026</span>
+          <h4>Data Analyst, Intern</h4>
+          <p>Vikas Bharat Advisory PVT.LTD.</p>
+        </div>
+      </div>
+    </div>
+    <div class="journey-actions">
+      <a class="btn primary" href="assets/Ankit_Sharma_Resume.pdf" download>&#11015; Resume</a>
+      <a class="btn" href="#connect">Connect &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MY SKILLS ============ -->
+<section id="skills">
+  <div class="section-head"><h2>My Skills</h2><p>Tools and technologies I have experience with</p></div>
+  <div class="filters" id="filters">
+    <button class="filter is-active" data-filter="all">All</button>
+    <button class="filter" data-filter="programming">Programming</button>
+    <button class="filter" data-filter="database">Database</button>
+    <button class="filter" data-filter="analytics">Analytics &amp; AI</button>
+    <button class="filter" data-filter="visual">Visualisation</button>
+  </div>
+  <div class="skill-grid" id="skillGrid">
+    <div class="card skill" data-cat="programming"><div class="ico"><img data-icon src="assets/icons/python.svg" alt="Python"><span class="fallback">Py</span></div><span class="name">Python</span></div>
+    <div class="card skill" data-cat="programming"><div class="ico"><img data-icon src="assets/icons/pandas.svg" alt="Pandas"><span class="fallback">Pd</span></div><span class="name">Pandas</span></div>
+    <div class="card skill" data-cat="programming"><div class="ico"><img data-icon src="assets/icons/numpy.svg" alt="NumPy"><span class="fallback">Np</span></div><span class="name">NumPy</span></div>
+    <div class="card skill" data-cat="programming"><div class="ico"><img data-icon src="assets/icons/scipy.svg" alt="SciPy"><span class="fallback">Sp</span></div><span class="name">SciPy</span></div>
+    <div class="card skill" data-cat="database"><div class="ico"><img data-icon src="assets/icons/sql.svg" alt="SQL"><span class="fallback">SQL</span></div><span class="name">SQL</span></div>
+    <div class="card skill" data-cat="database"><div class="ico"><img data-icon src="assets/icons/postgresql.svg" alt="PostgreSQL"><span class="fallback">Pg</span></div><span class="name">PostgreSQL</span></div>
+    <div class="card skill" data-cat="analytics"><div class="ico"><img data-icon src="assets/icons/excel.svg" alt="Excel"><span class="fallback">Xl</span></div><span class="name">Excel</span></div>
+    <div class="card skill" data-cat="analytics"><div class="ico"><img data-icon src="assets/icons/dax.svg" alt="DAX"><span class="fallback">DAX</span></div><span class="name">DAX</span></div>
+    <div class="card skill" data-cat="analytics"><div class="ico"><img data-icon src="assets/icons/power-query.svg" alt="Power Query"><span class="fallback">PQ</span></div><span class="name">Power Query</span></div>
+    <div class="card skill" data-cat="analytics"><div class="ico"><img data-icon src="assets/icons/xlbooster.svg" alt="XLBooster"><span class="fallback">XB</span></div><span class="name">XLBooster</span></div>
+    <div class="card skill" data-cat="analytics"><div class="ico"><img data-icon src="assets/icons/claude-ai.svg" alt="Claude AI"><span class="fallback">Cl</span></div><span class="name">Claude AI</span></div>
+    <div class="card skill" data-cat="analytics"><div class="ico"><img data-icon src="assets/icons/chatgpt.svg" alt="ChatGPT"><span class="fallback">GPT</span></div><span class="name">ChatGPT</span></div>
+    <div class="card skill" data-cat="analytics"><div class="ico"><img data-icon src="assets/icons/gemini.svg" alt="Gemini"><span class="fallback">Gm</span></div><span class="name">Gemini</span></div>
+    <div class="card skill" data-cat="visual"><div class="ico"><img data-icon src="assets/icons/power-bi.svg" alt="Power BI"><span class="fallback">BI</span></div><span class="name">Power BI</span></div>
+    <div class="card skill" data-cat="visual"><div class="ico"><img data-icon src="assets/icons/matplotlib.svg" alt="Matplotlib"><span class="fallback">Mpl</span></div><span class="name">Matplotlib</span></div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="section-head"><h2>Projects</h2><p>Work I have done</p></div>
+  <div class="two-up">
+    <article class="card media-card">
+      <div class="media-frame"><img src="assets/media/Project1.gif" alt="Instacart Online Grocery Basket Analysis banner"></div>
+      <div class="media-info">
+        <h3><a href="https://github.com/ankitsharma74an-cloud/instacart-online-grocery-basket-analysis" target="_blank" rel="noopener">Instacart Online Grocery Basket Analysis | SQL, Python &amp; Power BI</a></h3>
+        <p>Analysed 3.2M Instacart orders with SQL, Python and Power BI, uncovering a 58.97% reorder rate and cross-selling opportunities.</p>
+        <div class="tags"><span>SQL</span><span>Python</span><span>Power BI</span></div>
+        <div class="proj-links">
+          <a class="social-btn" href="https://github.com/ankitsharma74an-cloud/instacart-online-grocery-basket-analysis" target="_blank" rel="noopener"><img data-icon src="assets/icons/github.svg" alt=""><span class="fallback">GH</span>GitHub</a>
+          <a class="social-btn" href="https://www.linkedin.com/in/ankit-sharma-da/details/projects/edit/forms/589667941/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BBc1hU%2F6WTVSaNQGIvKnmNw%3D%3D" target="_blank" rel="noopener"><img data-icon src="assets/icons/linkedin.svg" alt=""><span class="fallback">in</span>LinkedIn</a>
+          <!-- <a class="social-btn" href="https://www.youtube.com/@ankitsharma" target="_blank" rel="noopener"><img data-icon src="assets/icons/youtube.svg" alt=""><span class="fallback">YT</span>YouTube</a> -->
+        </div>
+      </div>
+    </article>
+    <article class="card media-card">
+      <div class="media-frame"><img src="assets/media/Project2.gif" alt="E-Commerce Customer Churn and Cohort Analysis banner"></div>
+      <div class="media-info">
+        <h3><a href="https://github.com/ankitsharma74an-cloud/E-commerce-churn-cohort-analysis-excel" target="_blank" rel="noopener">E-Commerce Customer Churn &amp; Cohort Analysis (Excel)</a></h3>
+        <p>Built an Excel dashboard with Power Query, DAX and RFM churn scoring, revealing Champions drive 68% of revenue.</p>
+        <div class="tags"><span>Excel</span><span>Power Query</span><span>DAX</span></div>
+        <div class="proj-links">
+          <a class="social-btn" href="https://github.com/ankitsharma74an-cloud/E-commerce-churn-cohort-analysis-excel" target="_blank" rel="noopener"><img data-icon src="assets/icons/github.svg" alt=""><span class="fallback">GH</span>GitHub</a>
+          <a class="social-btn" href="https://www.linkedin.com/in/ankit-sharma-da/details/projects/edit/forms/2076021154/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BBc1hU%2F6WTVSaNQGIvKnmNw%3D%3D" target="_blank" rel="noopener"><img data-icon src="assets/icons/linkedin.svg" alt=""><span class="fallback">in</span>LinkedIn</a>
+          <!-- <a class="social-btn" href="https://www.youtube.com/@ankitsharma" target="_blank" rel="noopener"><img data-icon src="assets/icons/youtube.svg" alt=""><span class="fallback">YT</span>YouTube</a> -->
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="counter-row">
+    <div class="count-box">
+      <div class="counter" data-count="4">0+</div>
+      <div class="counter-label">Projects completed</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATES ============ -->
+<section id="certificates">
+  <div class="section-head"><h2>Certificates</h2><p>Self-learning &amp; Achievements</p></div>
+  <div class="two-up">
+    <article class="card media-card cert">
+      <div class="media-frame"><img src="assets/media/Certificate1.png" alt="Kaggle Pandas certificate"></div>
+      <div class="media-info">
+        <h3><a href="https://edu.skillcourse.in/view-certificate/SC-78ILAOON6K" target="_blank" rel="noopener">SQL Masterclass Beginners to Advance</a></h3>
+      </div>
+    </article>
+    <article class="card media-card cert">
+      <div class="media-frame"><img src="assets/media/Certificate2.png" alt="SQL Masterclass certificate"></div>
+      <div class="media-info">
+        <h3><a href="https://www.kaggle.com/learn/certification/ankitsharma1212/pandas" target="_blank" rel="noopener">Kaggle's Pandas certification</a></h3>
+      </div>
+    </article>
+  </div>
+  <div class="counter-row">
+    <a class="btn primary" href="https://www.linkedin.com/in/ankit-sharma-da/details/certifications/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BBc1hU%2F6WTVSaNQGIvKnmNw%3D%3D" target="_blank" rel="noopener">All Certificates</a>
+    <div class="count-box">
+      <div class="counter" data-count="15">0+</div>
+      <div class="counter-label">Certificates earned</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONNECT ============ -->
+<section id="connect">
+  <div class="connect-grid">
+    <div>
+      <h2 class="connect-title">Let's Connect</h2>
+      <p class="connect-lead">Whether you have an Job/internship opportunity, a project to collaborate on, or want to chat about data analytics and business intelligence, my inbox is always open.</p>
+      <div class="drop-card">
+        <div>
+          <small>DROP A LINE</small>
+          <strong>ankitsharma74an@gmail.com</strong>
+        </div>
+        <button class="copy-btn" id="copyBtn" type="button" title="Copy email" aria-label="Copy email">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="card form-card">
+      <h3>Send a Message</h3>
+      <div class="eyebrow">I'M LOOKING TO</div>
+      <div class="chips" id="chips">
+        <button type="button" class="chip is-active" data-intent="Just Chat" data-placeholder="Your Message">Just Chat</button>
+        <button type="button" class="chip" data-intent="Hire Me" data-placeholder="Opportunity Details">Hire Me</button>
+        <button type="button" class="chip" data-intent="Collaborate" data-placeholder="Collaboration Idea">Collaborate</button>
+      </div>
+      <form id="contactForm">
+        <input class="field" id="fName" type="text" placeholder="Your Name" required>
+        <input class="field" id="fEmail" type="email" placeholder="Your Email" required>
+        <textarea class="field" id="fMsg" placeholder="Your Message" required></textarea>
+        <button class="send-btn" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+  <div class="find-wrap">
+    <div class="eyebrow">FIND ME ON</div>
+    <div class="social-row" style="justify-content:flex-start">
+      <a class="social-btn" href="https://github.com/ankitsharma74an-cloud" target="_blank" rel="noopener"><img data-icon src="assets/icons/github.svg" alt=""><span class="fallback">GH</span>GitHub</a>
+      <a class="social-btn" href="https://www.linkedin.com/in/ankit-sharma-da" target="_blank" rel="noopener"><img data-icon src="assets/icons/linkedin.svg" alt=""><span class="fallback">in</span>LinkedIn</a>
+      <a class="social-btn" href="https://www.instagram.com/ankit.dataanalytics.ai?dlrf=MWxscjQzb2IyMndoeQ==" target="_blank" rel="noopener"><img data-icon src="assets/icons/instagram.svg" alt=""><span class="fallback">IG</span>Instagram</a>
+      <!-- <a class="social-btn" href="https://www.youtube.com/@ankitsharma" target="_blank" rel="noopener"><img data-icon src="assets/icons/youtube.svg" alt=""><span class="fallback">YT</span>YouTube</a> -->
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2026 Ankit Sharma &middot; Data Analyst</footer>
+
+<script>
+/* ---------- Intro video ---------- */
+(function(){
+  const video = document.getElementById('introVideo');
+  const stage = document.getElementById('introStage');
+  const text  = document.getElementById('introText');
+  const repeatBtn = document.getElementById('repeatBtn');
+  const soundBtn  = document.getElementById('soundBtn');
+
+  function showText(){ stage.classList.add('done'); text.classList.add('show'); }
+  function hideText(){ stage.classList.remove('done'); text.classList.remove('show'); }
+
+  video.addEventListener('ended', showText);
+
+  // Try with sound first; fall back to muted autoplay if the browser blocks it
+  video.muted = false;
+  video.play().catch(function(){
+    video.muted = true;
+    soundBtn.textContent = 'On Sound';
+    video.play().catch(function(){});
+  });
+
+  repeatBtn.addEventListener('click', function(){
+    hideText();
+    video.currentTime = 0;
+    video.play().catch(function(){});
+  });
+
+  soundBtn.addEventListener('click', function(){
+    video.muted = !video.muted;
+    soundBtn.textContent = video.muted ? 'On Sound' : 'Off Sound';
+  });
+})();
+
+/* ---------- Nav: click scroll + active highlight ---------- */
+(function(){
+  const buttons = document.querySelectorAll('#navCenter button');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const el = document.getElementById(btn.dataset.target);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+  const sections = ['about','journey','skills','projects','certificates'].map(id => document.getElementById(id));
+  const io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        buttons.forEach(b => b.classList.toggle('is-active', b.dataset.target === entry.target.id));
+      }
+    });
+  }, {rootMargin:'-45% 0px -50% 0px'});
+  sections.forEach(s => io.observe(s));
+})();
+
+/* ---------- Count-up that restarts when scrolled back ---------- */
+(function(){
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    const target = parseInt(el.dataset.count, 10);
+    let timer = null;
+    function render(n){ el.textContent = n + '+'; }
+    function start(){
+      clearInterval(timer);
+      let n = 0; render(0);
+      const step = Math.max(60, Math.round(900 / Math.max(target,1)));
+      timer = setInterval(function(){
+        n++; render(n);
+        if(n >= target) clearInterval(timer);
+      }, step);
+    }
+    function reset(){ clearInterval(timer); render(0); }
+    const io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ e.isIntersecting ? start() : reset(); });
+    }, {threshold:0.6});
+    io.observe(el);
+  });
+})();
+
+/* ---------- Skill filters ---------- */
+(function(){
+  const filters = document.querySelectorAll('#filters .filter');
+  const cards = document.querySelectorAll('#skillGrid .skill');
+  filters.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filters.forEach(f => f.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const f = btn.dataset.filter;
+      cards.forEach(function(c){
+        const show = f === 'all' || c.dataset.cat === f;
+        c.classList.toggle('hidden', !show);
+        if(show){ c.style.animation = 'none'; void c.offsetWidth; c.style.animation = ''; }
+      });
+    });
+  });
+})();
+
+/* ---------- Icon fallbacks (shows text badge if an SVG file is missing) ---------- */
+(function(){
+  document.querySelectorAll('img[data-icon]').forEach(function(img){
+    function fallback(){
+      img.classList.add('broken');
+      const fb = img.nextElementSibling;
+      if(fb && fb.classList.contains('fallback')) fb.classList.add('fallback-on');
+    }
+    img.addEventListener('error', fallback);
+    if(img.complete && img.naturalWidth === 0) fallback();
+  });
+})();
+
+/* ---------- Connect: chips, copy, mailto ---------- */
+(function(){
+  const chips = document.querySelectorAll('#chips .chip');
+  const msg = document.getElementById('fMsg');
+  let intent = 'Just Chat';
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      chips.forEach(x => x.classList.remove('is-active'));
+      c.classList.add('is-active');
+      intent = c.dataset.intent;
+      msg.placeholder = c.dataset.placeholder;
+    });
+  });
+
+  const copyBtn = document.getElementById('copyBtn');
+  copyBtn.addEventListener('click', function(){
+    const email = 'ankitsharma74an@gmail.com';
+    if(navigator.clipboard){
+      navigator.clipboard.writeText(email).catch(function(){});
+    }
+    copyBtn.classList.add('copied');
+    setTimeout(() => copyBtn.classList.remove('copied'), 1500);
+  });
+
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('fName').value.trim();
+    const email = document.getElementById('fEmail').value.trim();
+    const body = document.getElementById('fMsg').value.trim();
+    const subject = encodeURIComponent('[' + intent + '] Portfolio message from ' + name);
+    const text = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + body);
+    window.location.href = 'mailto:ankitsharma74an@gmail.com?subject=' + subject + '&body=' + text;
+  });
+})();
+</script>
+</body>
+</html>

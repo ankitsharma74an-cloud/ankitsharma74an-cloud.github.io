@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<title id="title">NumPy</title>
+<g stroke="none">
+<path fill="#4D77CF" d="M18 26 36 16 54 26 36 36Z"/><path fill="#75C6D9" d="M36 36 54 26 54 47 36 57Z"/><path fill="#567FCB" d="M18 26 36 36 36 57 18 47Z"/>
+<path fill="#73C8D9" d="M57 26 75 16 93 26 75 36Z"/><path fill="#4B7CCC" d="M75 36 93 26 93 47 75 57Z"/><path fill="#4E79C9" d="M57 26 75 36 75 57 57 47Z"/>
+<path fill="#4F7DCF" d="M38 61 56 51 74 61 56 71Z"/><path fill="#76C9D9" d="M56 71 74 61 74 82 56 92Z"/><path fill="#4D77CF" d="M38 61 56 71 56 92 38 82Z"/>
+</g>
+<text x="64" y="115" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="600" fill="#4D77CF">NumPy</text>
+</svg>
