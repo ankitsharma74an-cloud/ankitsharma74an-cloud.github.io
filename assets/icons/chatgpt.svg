@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<title id="title">ChatGPT / OpenAI knot mark, simplified SVG redraw</title>
+<g fill="none" stroke="#111111" stroke-width="6.2" stroke-linecap="round" stroke-linejoin="round">
+  <g id="loopA"><path d="M64 17 C74 17 81 24 81 34 V45 C81 51 78 55 72 58 L64 63 C58 66 52 62 52 56 V40 C52 29 57 21 64 17Z"/></g>
+  <use href="#loopA" transform="rotate(60 64 64)"/><use href="#loopA" transform="rotate(120 64 64)"/>
+  <use href="#loopA" transform="rotate(180 64 64)"/><use href="#loopA" transform="rotate(240 64 64)"/><use href="#loopA" transform="rotate(300 64 64)"/>
+</g>
+<path d="M64 46 79 55 79 73 64 82 49 73 49 55Z" fill="none" stroke="#111111" stroke-width="4.2" stroke-linejoin="round"/>
+</svg>

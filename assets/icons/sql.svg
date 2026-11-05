@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<title id="title">SQL — generic language icon, not an official vendor logo</title>
+<ellipse cx="64" cy="30" rx="43" ry="16" fill="#0F6CBD"/><path d="M21 30v59c0 9 19 16 43 16s43-7 43-16V30c0 9-19 16-43 16S21 39 21 30Z" fill="#164A72"/>
+<path d="M21 50c0 9 19 16 43 16s43-7 43-16M21 70c0 9 19 16 43 16s43-7 43-16" fill="none" stroke="#69C5E8" stroke-width="5"/>
+<text x="64" y="62" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="800" fill="#fff">SQL</text>
+</svg>

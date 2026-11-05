@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">LinkedIn</title>
+  <desc id="desc">LinkedIn blue [in] social logo with white lettering.</desc>
+  <rect x="0" y="0" width="512" height="512" rx="44" fill="#0A66C2"/>
+  <circle cx="143" cy="156" r="27" fill="#FFFFFF"/>
+  <rect x="116" y="207" width="54" height="181" rx="7" fill="#FFFFFF"/>
+  <path fill="#FFFFFF" d="M211 207h53v25c13-19 34-31 62-31 63 0 76 41 76 99v88h-57v-78c0-29-1-54-34-54s-43 25-43 52v80h-57V207z"/>
+</svg>

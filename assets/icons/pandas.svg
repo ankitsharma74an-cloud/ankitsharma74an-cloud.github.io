@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<title id="title">pandas</title>
+<g fill="#150458"><rect x="38" y="22" width="8" height="48"/><rect x="51" y="35" width="8" height="35"/><rect x="64" y="14" width="8" height="56"/><rect x="77" y="28" width="8" height="42"/></g>
+<rect x="51" y="25" width="8" height="7" fill="#FFCA00"/><rect x="77" y="17" width="8" height="7" fill="#E70488"/><rect x="64" y="43" width="8" height="7" fill="#FFCA00"/>
+<text x="64" y="100" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="600" letter-spacing="-1.4" fill="#150458">pandas</text>
+</svg>
